@@ -76,26 +76,43 @@
     background-color: #c3c3c3;
     margin: 0 auto;
 }
-
-.table-style thead {
-    border-collapse: collapse;
+.table-style {
     height: 100%;
     width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+thead {
+    width: 100%;
+}
+.days {
+    width: 12.5vw;
+}
+/* thead {
+    border-collapse: collapse;
     border: 3px solid black;
     background-color: aqua;
-}
-thead th {
-    width: 12.5vw;
-    height: 10%;
+} */
+th  {
+    font-size: 1.5rem;
+    height: 7vh;
     border: 3px solid black;
     border-collapse: collapse;
+    background-color: aqua;
+}
 
-}
-.table-style {
+.tbody-size td {
     
-}
-.tbody-size tr td {
-    width: 5%;
     border: 3px solid black;
     border-collapse: collapse;
+}
+td:hover {
+    background-color: blueviolet;
+}
+.hours {
+    text-align: center;
+    font-weight: bold;
+}
+.hours:hover {
+    background-color: aquamarine;
 }
