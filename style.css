@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    height: 100vh;
+    width: 100cw;
+    background-color: #faebd7;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5vh;
+}
+.navbarLinks ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+.navbarLinks li a {
+    padding: 1rem;
+    text-decoration: none;
+}
+.navbarLinks li:hover {
+    background-color: #c3c3c3;
+}
+.toggleButton {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    top: 0.75rem;
+    right: 1rem;
+}
+.toggleButton .bar {
+    height: 3px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #000;
+}
+@media screen and (max-width: 600px) {
+    .toggleButton {
+        display: flex;
+    }
+    .navbarLinks {
+        display: none;
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .navbarLinks  ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbarLinks {
+        text-align: center;
+    }
+    .navbarLinks li a {
+        padding: 0.5rem 1rem;
+    }
+    .navbarLinks:active {
+        display: flex;
+    }
+}
+.timetable {
+    height: 80vh;
+    width: 80vw;
+    background-color: #c3c3c3;
+    margin: 0 auto;
+}
+
+.table-style thead {
+    border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+    border: 3px solid black;
+    background-color: aqua;
+}
+thead th {
+    width: 12.5vw;
+    height: 10%;
+    border: 3px solid black;
+    border-collapse: collapse;
+
+}
+.table-style {
+    
+}
+.tbody-size tr td {
+    width: 5%;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
