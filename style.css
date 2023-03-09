@@ -6,7 +6,7 @@
 
 #main {
     height: 100vh;
-    width: 100cw;
+    width: 100vw;
     background-color: #faebd7;
 }
 
@@ -15,19 +15,27 @@
     justify-content: space-around;
     align-items: center;
     height: 5vh;
+    margin-bottom: 1rem;
 }
+.currentMonday {
+    color: #0000ff;
+}
+
 .navbarLinks ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: flex;
+    display: none; /* change to flex with js*/
 }
-.navbarLinks li a {
-    padding: 1rem;
+.navbarLinks li button {
+    padding: 0.3rem;
+    margin: 0.2rem;
     text-decoration: none;
+    width: 110px;
+    font-weight: bold;
 }
 .navbarLinks li:hover {
-    background-color: #c3c3c3;
+    background-color: #ff0000;
 }
 .toggleButton {
     position: absolute;
@@ -63,7 +71,7 @@
     .navbarLinks {
         text-align: center;
     }
-    .navbarLinks li a {
+    .navbarLinks li button {
         padding: 0.5rem 1rem;
     }
     .navbarLinks:active {
@@ -115,4 +123,11 @@ td:hover {
 }
 .hours:hover {
     background-color: aquamarine;
+}
+.activeCell {
+    background-color: #ffff00;
+}
+.closeForm:hover {
+    cursor: pointer;
+    background-color: #ffffff;
 }
