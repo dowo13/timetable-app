@@ -1,8 +1,10 @@
 
 
 export class AddToCellForm {
+    
 
     enterEventInformation(){
+    
         const formDiv = document.createElement('div');
         formDiv.classList.add('eventInfo');
         formDiv.style.height = 70 + 'vh'
@@ -16,6 +18,7 @@ export class AddToCellForm {
 
         const closeForm = document.createElement('span');
         closeForm.classList.add('closeForm');
+        closeForm.setAttribute('title', 'close')
         closeForm.innerHTML =  '&#x2715'
         closeForm.style.width = '1.5rem'
         closeForm.style.position = 'absolute'
@@ -28,6 +31,7 @@ export class AddToCellForm {
 
         const frm = document.createElement('form');
         frm.setAttribute('name', 'eventInfoForm');
+        frm.setAttribute('id', 'eventInfoForm')
         
 
         const fieldset = document.createElement('fieldset')
@@ -38,7 +42,7 @@ export class AddToCellForm {
     
 
         const leg = document.createElement('legend')
-        leg.textContent = 'Event Information';
+        leg.textContent = 'Enter Event Details';
         leg.style.fontSize = `1.5rem`
 
         const titleDiv = document.createElement('div')
@@ -61,10 +65,9 @@ export class AddToCellForm {
 
         const dateLabel = document.createElement('label')
         dateLabel.setAttribute('for', 'dateTitle')
-        dateLabel.textContent = 'Date: '
+        dateLabel.textContent = 'Event Date: '
 
         const dateInput = document.createElement('input')
-        dateInput.setAttribute('type', 'date')
         dateInput.setAttribute('id', 'dateInput')
         dateInput.setAttribute('name', 'dateInput')
         dateInput.style.width = '100%'
@@ -80,20 +83,20 @@ export class AddToCellForm {
         tArea.setAttribute('id', 'tArea')
         tArea.style.width = '100%'
         tArea.style.height = '40vh'
-        tArea.setAttribute('placeholder', 'enter brief description of event...')
+        tArea.setAttribute('placeholder', 'enter any further information here...')
         tArea.style.fontSize = '15px'
 
         const butDiv = document.createElement('div')
         butDiv.classList.add('eventButtDiv')
         butDiv.style.marginTop = '0.5rem'
-
-        const addEventBut = document.createElement('button')
-        addEventBut.setAttribute('form', 'eventInfoForm')
+        
+        const addEventBut = document.createElement('input')
+        addEventBut.setAttribute('type', 'button')
         addEventBut.classList.add('evBut')
-        addEventBut.textContent = 'add event'
+        addEventBut.value = 'add event'
         addEventBut.style.height = '2rem'
         addEventBut.style.width = '10rem'
-
+        addEventBut.setAttribute('title', 'click me to add event')
 
         formDiv.appendChild(closeForm);
         formDiv.appendChild(frm);
@@ -110,14 +113,51 @@ export class AddToCellForm {
         fieldset.appendChild(butDiv)
         butDiv.appendChild(addEventBut)
 
+        let x = window.matchMedia("(orientation:portrait)")
+        let y = window.matchMedia("(orientation:landscape)")
+        let z = window.matchMedia("(max-width: 930px)")
+        if(x.matches){
+            formDiv.style.width = '80vw'
+            formDiv.style.marginTop = '3rem'
+            frm.style.width = 'auto'
+            frm.style.height = 'auto'
+            fieldset.style.width = 'auto'
+            tArea.style.height = '40vh'
+        }
+        if(y.matches && z.matches){
+            formDiv.style.width = '80vw'
+            formDiv.style.border = '3px solid black'
+            formDiv.style.marginTop = '2rem'
+            frm.style.height = 'auto'
+            fieldset.style.height = '60vh'
+            fieldset.style.width = 'auto'
+            titleDiv.style.width = 'auto'
+            titleDiv.style.height = 'auto'
+            titInput.style.height = 'auto'
+            dateInput.style.height = 'auto'
+            tArea.style.height = '17.25vh'
+            addEventBut.style.height = 'auto'
+        }
+        if(!y.matches && !z.matches){
+            formDiv.style.width = '30vw'
+            formDiv.style.backgroundColor = 'pink'
+            formDiv.style.border = '5px solid black'
+            formDiv.style.marginTop = ''
+            frm.style.height = ''
+            fieldset.style.height = '65vh'
+            fieldset.style.width = '25vw'
+            titleDiv.style.width = 'auto'
+            titleDiv.style.height = ''
+            titInput.style.height = '2rem'
+            dateInput.style.height = '2rem'
+            tArea.style.height = '40vh'
+            addEventBut.style.height = '2rem'
+        }
+
         return formDiv;
     }
 
     autoSizeTextArea(){
 
-    }
-
-    handleFormdata(){
-        console.log('yo yoy yoy yoy')
     }
 }

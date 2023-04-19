@@ -1,4 +1,3 @@
-import { LocalStorageClass } from "./localStorageClass.js";
 
 export class ShowDataOnload {
     /**
@@ -23,18 +22,4 @@ export class ShowDataOnload {
         return text.textContent = `${new Date(newDate).toDateString()}`
     }
 
-    checkLocalStorage(){
-        console.log('i will check local storage and show data on page if anything is in local storage')
-
-        const storageName = 'daily_time_table';
-
-        if(localStorage.getItem(storageName) === null ){
-            return;
-        }else{
-            // load in storage from here
-
-            
-        }
-        console.log()
-    }
 }

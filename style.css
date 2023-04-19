@@ -25,7 +25,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: none; /* change to flex with js*/
+    display: flex; /* change to flex with js*/
 }
 .navbarLinks li button {
     padding: 0.3rem;
@@ -33,6 +33,15 @@
     text-decoration: none;
     width: 110px;
     font-weight: bold;
+}
+.addToCell {
+    visibility: hidden;
+}
+.viewItems {
+    visibility: hidden;
+}
+.resetAll {
+    visibility: visible;
 }
 .navbarLinks li:hover {
     background-color: #ff0000;
@@ -53,7 +62,17 @@
     border-radius: 10px;
     background-color: #000;
 }
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
+    #main {
+        height: 100%;
+        width: 100%; 
+    }
+    .title {
+        height: 5vh;
+    }
+    .schedule {
+        font-size: 1rem;
+    }
     .toggleButton {
         display: flex;
     }
@@ -61,8 +80,9 @@
         display: none;
         width: 100%;
     }
-    .navbar {
+    .nav {
         flex-direction: column;
+        height: 10vh;
     }
     .navbarLinks  ul {
         width: 100%;
@@ -73,15 +93,16 @@
     }
     .navbarLinks li button {
         padding: 0.5rem 1rem;
+        height: 0.5rem;
     }
     .navbarLinks:active {
         display: flex;
     }
-}
+} */
 .timetable {
-    height: 80vh;
+    max-height: 95vh;
     width: 80vw;
-    background-color: #c3c3c3;
+    background-color: #D9E4D4;
     margin: 0 auto;
 }
 .table-style {
@@ -110,9 +131,14 @@ th  {
 }
 
 .tbody-size td {
-    
     border: 3px solid black;
     border-collapse: collapse;
+}
+tr {
+    max-height: 7vh;
+}
+td {
+    height: 7vh;
 }
 td:hover {
     background-color: blueviolet;
@@ -131,3 +157,152 @@ td:hover {
     cursor: pointer;
     background-color: #ffffff;
 }
+input:focus, textarea:focus {
+    background-color: #d3d3d3;
+}
+.ulDiv {
+    height: 100%;
+    width: 100%;
+}
+.cellListUl {
+    list-style-type: none;
+    max-height: 6vh;
+    overflow: hidden;
+}
+.cellListUl:hover {
+    overflow: visible;
+    max-height: fit-content;
+}
+.viewUl:hover {
+    cursor: pointer;
+}
+@media screen and (max-width: 920px){
+    .nav {
+        display: flex;
+        height: 8vh;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        font-size: 10px;
+        justify-items: center;
+        align-items: center;
+    }
+    .navbarLinks li button {
+        padding: 0.3rem;
+        margin: 0.2rem;
+        text-decoration: none;
+        width: 5rem;
+        height: 1.5rem;
+        font-size: 8px;
+        font-weight: bold;
+        text-align: center
+    }
+}
+@media screen and (orientation:portrait) and (max-width: 600px){
+    #main {
+        height: 100vh;
+        width: 100%;
+        background-color:  #faebd7;
+    }
+    .nav {
+        display: flex;
+        height: 10vh;
+        width: 100%;
+        margin-bottom: 0rem;
+        /* justify-items: center;
+        align-items: center; */
+    }
+    .title {
+        font-size: 10px;
+    }
+   
+    .navbarLinks li button {
+        /* padding: 0.1rem; */
+        margin: 0.1rem;
+        text-decoration: none;
+        width: 4rem;
+        height: 1.5rem;
+        font-size: 8px;
+        font-weight: bold;
+        text-align: center
+    }
+    .timetable {
+        margin-top: 1rem;
+        width: 80vw;
+    }
+    .table-style {
+        height: 100%;
+        width: 100%;
+        border-collapse: collapse;
+        border: 2px solid black;
+    }
+    .days {
+        width: 9.5vw;
+    }
+    .hours {
+        font-size: 0.75rem;
+    }
+    th  {
+        font-size: 1rem;
+        height: 5vh;
+        border: 2px solid black;
+    }
+    .tbody-size td {
+        border: 2px solid black;
+    }
+    tr, td{
+        max-height: 5vh;
+        font-size: 0.75rem;
+    }
+    td:hover {
+        background-color: blueviolet;
+    }
+}
+
+/* @media screen and (max-width: 600px) {
+    #main {
+        height: 100%;
+        width: 100%; 
+        background-color: #0000ff;
+    }
+    .title {
+        height: 5vh;
+    }
+    .schedule {
+        font-size: 1rem;
+    }
+    .toggleButton {
+        display: flex;
+    }
+    .navbarLinks {
+        display: none;
+        width: 100%;
+    }
+    .nav {
+        flex-direction: column;
+        height: 10vh;
+    }
+    .navbarLinks  ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbarLinks {
+        text-align: center;
+    }
+    .navbarLinks li button {
+        padding: 0.5rem 1rem;
+        height: 0.5rem;
+    }
+    .navbarLinks:active {
+        display: flex;
+    }
+} */
+/* 
+.cellListR1, .cellListR2, .cellListR3, .cellListR4, .cellListR5, .cellListR6, .cellListR7, .cellListR8, .cellListR9, .cellListR10 {
+    list-style-type: none;
+    max-height: 6vh;
+    overflow: hidden;
+}
+.cellListR1:hover, .cellListR2:hover, .cellListR3:hover, .cellListR4:hover, .cellListR5:hover, .cellListR6:hover, .cellListR7:hover, .cellListR8:hover, .cellListR9:hover, .cellListR10:hover {
+    overflow: visible;
+    max-height: fit-content;
+} */
