@@ -1,7 +1,7 @@
-import { AddToCells } from "./addToCells.js";
+
 import { AddToCellForm } from "./addToCellForm.js";
 import { ShowDataOnload } from "./showDataOnload.js";
-import { EventObj } from "./eventInfoClass.js";
+
 import { AddEvent } from "./addEvClass.js";
 import { Formdata } from "./formDataObjClass.js";
 import { LocalStorageClass } from "./localStorageClass.js";
