@@ -2,7 +2,6 @@
 import { AddToCellForm } from "./addToCellForm.js";
 import { ShowDataOnload } from "./showDataOnload.js";
 
-import { AddEvent } from "./addEvClass.js";
 import { Formdata } from "./formDataObjClass.js";
 import { LocalStorageClass } from "./localStorageClass.js";
 
@@ -24,7 +23,6 @@ const runTimeTable = function(){
 
     const activeCellsSet = new Set();
     const addEvForm = new AddToCellForm().enterEventInformation()
-    const addNewEv = new AddEvent(activeCellsSet);
     let table = document.querySelector('.table-style');
     let arrObs = []
     
