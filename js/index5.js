@@ -19,13 +19,12 @@ const runTimeTable = function(){
     const viewItems = document.querySelector('.viewItems');
     const clearTable = document.querySelector('.resetAll');
     const weekCommence = document.querySelector('.currentMonday');
-    // const cells = Array.from(document.querySelectorAll('.cells'));
+    
     let cells //= document.querySelectorAll('.cells');
 
     const activeCellsSet = new Set();
     const addEvForm = new AddToCellForm().enterEventInformation()
     const addNewEv = new AddEvent(activeCellsSet);
-    let tr = document.querySelectorAll('tr')
     let table = document.querySelector('.table-style');
     let arrObs = []
     
