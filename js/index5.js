@@ -1,13 +1,13 @@
 
-import { AddToCellForm } from "../js/addToCellForm";
-import { ShowDataOnload } from "../js/showDataOnload";
+import { AddToCellForm } from "../js/addToCellForm.js";
+import { ShowDataOnload } from "../js/showDataOnload.js";
 
-import { Formdata } from "../js/formDataObjClass";
-import { LocalStorageClass } from "../js/localStorageClass";
+import { Formdata } from "../js/formDataObjClass.js";
+import { LocalStorageClass } from "../js/localStorageClass.js";
 
-import { showNavButtons, addActiveCells, addEvsToCorrectCellandClearSet } from "../js/addNewEvents";
-import { appendForm, closeForm, removeActiveClassListOnClose, focusEls, validateInput } from "../js/formAdd";
-import { ViewCellItems } from "../js/viewItems";
+import { showNavButtons, addActiveCells, addEvsToCorrectCellandClearSet } from "../js/addNewEvents.js";
+import { appendForm, closeForm, removeActiveClassListOnClose, focusEls, validateInput } from "../js/formAdd.js";
+import { ViewCellItems } from "../js/viewItems.js";
 
 
 const runTimeTable = function(){
