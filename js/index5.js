@@ -6,7 +6,7 @@ import { AddEvent } from "./addEvClass.js";
 import { Formdata } from "./formDataObjClass.js";
 import { LocalStorageClass } from "./localStorageClass.js";
 
-import { showNavButtons, addActiveCells, addEvsToCorrectCellandClearSet, deleteObs } from "./addEventMethods/addNewEvents.js";
+import { showNavButtons, addActiveCells, addEvsToCorrectCellandClearSet } from "./addEventMethods/addNewEvents.js";
 import { appendForm, closeForm, removeActiveClassListOnClose, focusEls, validateInput } from "./addEventMethods/formAdd.js";
 import { ViewCellItems } from "./viewItems.js";
 

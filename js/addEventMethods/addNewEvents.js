@@ -26,19 +26,6 @@ export function showNavButtons(nav, arr){
     })
 
     return nav
-    // for(let b of nav){
-    //     console.log(b)
-    //     if(arr.length === 0){
-    //         b.style.visibility = 'visible'
-    //     }else{
-    //         b.style.visibility = 'hidden'
-    //     }
-    // }
-    // if(arr.length === 0){
-    //     return nav.style.display = 'none';
-    // }else{
-    //     return nav.style.display = 'flex';
-    // }
 }
 
 export function addEvsToCorrectCellandClearSet(evtOb, cells){
@@ -68,17 +55,4 @@ export function addEvsToCorrectCellandClearSet(evtOb, cells){
 
     return evtOb
 }
-
-export function deleteObs(arr, strgArr){
-    console.log(arr)
-    console.log(strgArr)
-   
-    for(let i of arr){
-        console.log(i)
-        i.cell.classList.remove('activeCell')
-        i.cell.classList.remove('cells')
-    }
-    return arr
-}
-
 
