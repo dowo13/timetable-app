@@ -19,7 +19,7 @@ const runTimeTable = function(){
     const clearTable = document.querySelector('.resetAll');
     const weekCommence = document.querySelector('.currentMonday');
     
-    let cells
+    let cells 
 
     const activeCellsSet = new Set();
     const addEvForm = new AddToCellForm().enterEventInformation()
