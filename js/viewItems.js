@@ -194,6 +194,7 @@ export class ViewCellItems {
         cellDetailsHours.style.fontWeight = 'bold'
         cellDetailsHours.style.width = `100%`
 
+        
         const itemTitle = document.createElement('input');
         itemTitle.classList.add('iTitle');
         itemTitle.setAttribute('readonly', 'true')
@@ -206,6 +207,17 @@ export class ViewCellItems {
         itemDate.value = `Date: ${item.date}`;
         itemDate.style.width = `100%`
         itemDate.style.fontWeight = 'bold'
+
+        const aLink = document.createElement('a')
+        aLink.classList.add('aLink');
+        const inputLink = document.createElement('input')
+        inputLink.classList.add('inputLink');
+        inputLink.setAttribute('readonly', 'true');
+        inputLink.value = `${item.link}`
+        inputLink.style.width = '100%'
+        aLink.href = inputLink.value;
+        aLink.target = '_blank'
+
         const itemNote = document.createElement('textArea');
         itemNote.classList.add('iNote');
         itemNote.setAttribute('readonly', 'true')
@@ -213,6 +225,9 @@ export class ViewCellItems {
         itemNote.style.width = `100%`
         itemNote.style.resize = 'none'
         itemNote.style.fontWeight = 'bold'
+
+       
+
 
         const del = document.createElement('button');
         del.classList.add('deleteItem');
@@ -228,6 +243,8 @@ export class ViewCellItems {
         popUpDiv.appendChild(cellDetailsHours)
         popUpDiv.appendChild(itemTitle);
         popUpDiv.appendChild(itemDate);
+        popUpDiv.appendChild(aLink);
+        aLink.appendChild(inputLink)
         popUpDiv.appendChild(itemNote);
         popUpDiv.appendChild(del)
 

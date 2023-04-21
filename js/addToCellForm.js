@@ -73,19 +73,33 @@ export class AddToCellForm {
         dateInput.style.width = '100%'
         dateInput.style.height = '2rem'
 
+        const linkAddDiv = document.createElement('div')
+        linkAddDiv.classList.add('linkAddDiv')
+        linkAddDiv.style.marginTop = '0.5rem'
+
+        const addLinkAddressLabel = document.createElement('label')
+        addLinkAddressLabel.setAttribute('for', 'dateTitle')
+        addLinkAddressLabel.textContent = 'Add www link: '
+
+        const addLinkAddress = document.createElement('input')
+        addLinkAddress.setAttribute('id', 'addLinkAddress')
+        addLinkAddress.setAttribute('name', 'addLinkAddress')
+        addLinkAddress.style.width = '100%'
+        addLinkAddress.style.height = '2rem'
+
         const textareaDiv = document.createElement('div')
         textareaDiv.classList.add('textAreaDiv')
         textareaDiv.style.marginTop = '0.5rem'
-
+        
         const tArea = document.createElement('textarea')
         tArea.classList.add('tArea')
         tArea.setAttribute('name', 'tArea')
         tArea.setAttribute('id', 'tArea')
         tArea.style.width = '100%'
-        tArea.style.height = '40vh'
+        tArea.style.height = '35vh'
         tArea.setAttribute('placeholder', 'enter any further information here...')
         tArea.style.fontSize = '15px'
-
+       
         const butDiv = document.createElement('div')
         butDiv.classList.add('eventButtDiv')
         butDiv.style.marginTop = '0.5rem'
@@ -108,6 +122,9 @@ export class AddToCellForm {
         fieldset.appendChild(dateDiv)
         dateDiv.appendChild(dateLabel)
         dateLabel.appendChild(dateInput)
+        fieldset.appendChild(linkAddDiv)
+        linkAddDiv.appendChild(addLinkAddressLabel)
+        addLinkAddressLabel.appendChild(addLinkAddress)
         fieldset.appendChild(textareaDiv)
         textareaDiv.appendChild(tArea)
         fieldset.appendChild(butDiv)
@@ -122,7 +139,7 @@ export class AddToCellForm {
             frm.style.width = 'auto'
             frm.style.height = 'auto'
             fieldset.style.width = 'auto'
-            tArea.style.height = '40vh'
+            tArea.style.height = '35vh'
         }
         if(y.matches && z.matches){
             formDiv.style.width = '80vw'
@@ -134,8 +151,10 @@ export class AddToCellForm {
             titleDiv.style.width = 'auto'
             titleDiv.style.height = 'auto'
             titInput.style.height = 'auto'
+            titInput.style.textAlign = 'fit-content'
             dateInput.style.height = 'auto'
-            tArea.style.height = '17.25vh'
+            addLinkAddress.style.height = 'auto'
+            tArea.style.height = '7.25vh'
             addEventBut.style.height = 'auto'
         }
         if(!y.matches && !z.matches){
@@ -150,7 +169,8 @@ export class AddToCellForm {
             titleDiv.style.height = ''
             titInput.style.height = '2rem'
             dateInput.style.height = '2rem'
-            tArea.style.height = '40vh'
+            addLinkAddress.style.height = '2rem'
+            tArea.style.height = '30vh'
             addEventBut.style.height = '2rem'
         }
 

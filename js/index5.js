@@ -1,13 +1,13 @@
 
-import { AddToCellForm } from "/js/addToCellForm.js";
-import { ShowDataOnload } from "/js/showDataOnload.js";
+import { AddToCellForm } from "./addToCellForm.js";
+import { ShowDataOnload } from "./showDataOnload.js";
 
-import { Formdata } from "/js/formDataObjClass.js";
-import { LocalStorageClass } from "/js/localStorageClass.js";
+import { Formdata } from "./formDataObjClass.js";
+import { LocalStorageClass } from "./localStorageClass.js";
 
-import { showNavButtons, addActiveCells, addEvsToCorrectCellandClearSet } from "/js/addNewEvents.js";
-import { appendForm, closeForm, removeActiveClassListOnClose, focusEls, validateInput } from "/js/formAdd.js";
-import { ViewCellItems } from "/js/viewItems.js";
+import { showNavButtons, addActiveCells, addEvsToCorrectCellandClearSet } from "./addNewEvents.js";
+import { appendForm, closeForm, removeActiveClassListOnClose, focusEls, validateInput } from "./formAdd.js";
+import { ViewCellItems } from "./viewItems.js";
 
 
 const runTimeTable = function(){
@@ -132,7 +132,7 @@ const runTimeTable = function(){
         let frm = document.forms['eventInfoForm'].elements;
          // validate form and submit //
         frm[2].value = `${today}/${month}/${year}`
-        frm[4].addEventListener('click', (e) => {
+        frm[5].addEventListener('click', (e) => {
             let validate = validateInput(frm[1]);
             if(validate){
                 console.log(arrObs)
@@ -145,8 +145,9 @@ const runTimeTable = function(){
                
                 console.log(arrObs)
                 console.log(cellId)
+                console.log(frm[3].value)
                 
-                const evOb = new Formdata(frm[1].value, frm[2].value, frm[3].value, cellId, cellDay, cellHours);
+                const evOb = new Formdata(frm[1].value, frm[2].value, frm[3].value, frm[4].value, cellId, cellDay, cellHours);
                 closeForm(apd.children[0], tTable)
                 arrObs = removeActiveClassListOnClose(arrObs);
                 let sv = savToLocal.saveToStorage(evOb, storageName)
@@ -203,4 +204,4 @@ const runTimeTable = function(){
 
    }
 
-document.addEventListener('DOMContentLoaded', runTimeTable)
+let runApp = document.addEventListener('DOMContentLoaded', runTimeTable)
